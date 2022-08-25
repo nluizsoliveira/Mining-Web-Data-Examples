@@ -22,8 +22,8 @@ I CSV, the first line **may** contain the **headers** (or **labels**) of the dat
 There may be cases where the header line is ommited, being described in a somewhere else. 
 
 ## General Idea
-1.  Download a database programatically
-2.  Schedule the task so the script is executed every x time (hourly, daily, weekly, etc)
+1.  Download a database programatically using **python requests** module
+2.  Schedule the task so the script is executed every x time (hourly, daily, weekly, etc) using **cron**
 
 ## Case
 Schedule a script that downloads Covid data from Victoria, the Australian State, available at 
@@ -32,6 +32,18 @@ https://www.coronavirus.vic.gov.au/victorian-coronavirus-covid-19-data
 ![](https://i.imgur.com/aOq0oJv.png)
 
 ![](https://i.imgur.com/922IbRz.png)
+
+## How cron works?
+1) **Cron** is a Linux daemon (you can think it as a special service process that runs background) for scheduling scripts. 
+It works by checking, **every minute**, if there is some script to execute. 
+
+2) **Crontab** is the file cron checks for scripts schedules. Usually there's a crontab for root and one for every user. 
+
+3) **Cronjob** is the actual script associated with a schedule. It's represented by a **single line in a crontab**, that defines a **timer** and a **script**. 
+
+4) **Timer** is in the `* * * * *` format. From left to right, eat bracket represents **every** minute, hour, day, month and weekday. They are tricky, so be sure to use an auxiliar service such as https://crontab.guru/ to ensure your timer is properly setted. 
+
+5) **Script** may be a plaintext **shell script** or the **complete path to a shell script**. 
 
 ## Approach
 1. Pick the link to the desired db: 
@@ -59,7 +71,7 @@ https://www.coronavirus.vic.gov.au/victorian-coronavirus-covid-19-data
     * * * * *  complete/path/to/script/script.sh
     ```
 
-## Example
+## Crontab Example
 For setting `test.sh` and `cron_script_sh` to run every minute, do: 
 
 0) Set execution permissions: 
