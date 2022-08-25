@@ -65,7 +65,7 @@ For setting `test.sh` and `cron_script_sh` to run every minute, do:
 0) Set execution permissions: 
 ```bash
 chmod +x test.sh
-cron_script.sh
+chmod +x cron_script.sh
 ```
 1) Discover complete path to this folder on your pc
 ```bash
