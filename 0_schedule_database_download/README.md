@@ -58,3 +58,29 @@ https://www.coronavirus.vic.gov.au/victorian-coronavirus-covid-19-data
     ```
     * * * * *  complete/path/to/script/script.sh
     ```
+
+## Example
+For setting `test.sh` and `cron_script_sh` to run every minute, do: 
+
+0) Set execution permissions: 
+```bash
+chmod +x test.sh
+cron_script.sh
+```
+1) Discover complete path to this folder on your pc
+```bash
+pwd
+```
+2) Open crontab
+```bash
+crontab -e
+```
+3) Inside crontab (my paths)
+```bash
+* * * * * /home/luiz/Mining-Web-Data-Examples/0_schedule_database_download/cron_script.sh
+* * * * * /home/luiz/Mining-Web-Data-Examples/0_schedule_database_download/test.sh
+```
+
+You shall see a `log` being created and increasing content every minute. 
+
+You shall also see new CSVs being downloaded at `/databases/backups`. 
