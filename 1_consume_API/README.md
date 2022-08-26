@@ -1,13 +1,15 @@
 # Consume Open APIs
-API stands for Application Programming Interface. In practice, this means a series of routes:
+API stands for Application Programming Interface. 
 
-(ex: `user/<userId>`, `/products`, `products/<productId>`)
-
-That provide structured data, through a well defined communication procotol (usually `HTTP`) and architecture (ex: `rest`) that can to be 
+They provide structured data, through a well defined communication procotol (usually `HTTP`) and architecture (ex: `rest`) that can be 
 consumed by multiple clients (front-ends, mobile apps, IOT devices, etc).
+
+
+## Restful API lookup
 
 ![](https://i.imgur.com/b2JZgrW.png)
 
+## Intern vs Public
 APIs may be intern/protected to avoid external use. But sometimes a service purposely provides data for developers.   
 
 Examples: 
